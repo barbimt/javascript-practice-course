@@ -1,7 +1,7 @@
 # javascript-practice-course
 
 ## Project #1: geometric figures
-![Live Demo](https://barbimt.github.io/javascript-practice-course)
+[Live Demo](https://barbimt.github.io/javascript-practice-course)
 
 - 1st step: define formulas
 - 2nd step: implement formulas in JavaScript

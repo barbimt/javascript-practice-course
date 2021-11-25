@@ -6,3 +6,10 @@
 - 2nd step: implement formulas in JavaScript
 - 3rd step: create functions
 - 4th step: integrate JS with HTML
+
+## Project #2: percentajes and discounts
+
+- 1st step: define formulas
+- 2nd step: implement formulas in JavaScript
+- 3rd step: create functions
+- 4th step: integrate JS with HTML

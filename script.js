@@ -1,57 +1,50 @@
-// código del cuadrado
-//calculamos el perimetro de un cuadrado con lados de 5cm
+/* -------------------------------- CUADRADO -------------------------------- */
 console.group("Cuadrados");
 
-//creamos el perímetro
 const perimetroCuadrado = (lado) => lado * 4;
-
-//sumar los lados del cuadrado 4 veces
 const areaCuadrado = (lado) => lado * lado;
 
 console.groupEnd();
 
-// código del triángulo
+/* ------------------------------- TRIANGULOS ------------------------------- */
+
 console.group("Triángulos");
+
 const perimetroTriangulo = (lado1, lado2, base) => lado1 + lado2 + base;
-
 const areaTriangulo = (base, altura) => (base * altura) / 2;
-console.log(areaTriangulo(2, 5));
+
 console.groupEnd();
 
-// código del círculo
+/* --------------------------------- CIRCULO -------------------------------- */
 console.group("Círculos");
-//diámetro
+
 const diametroCirculo = (radio) => radio * 2;
-
-//pi
 const PI = Math.PI;
-
-//circunferencia, los usuarios saben cuanto es el radio del circulo
 const perimetroCirculo = (radio) => diametroCirculo(radio) * PI;
-
-//area
 const areaCirculo = (radio) => PI * radio ** 2;
-console.log(areaCirculo(4));
+
 console.groupEnd();
 
-// Aqui interactualmos con el html
+/* ------------------- Aqui interactualmos con el HTML ------------------- */
+
+/* -------------------------------- CUADRADO -------------------------------- */
 function calcularPerimetroCuadrado() {
   const input = document.getElementById("InputCuadrado");
   const value = input.value;
-
   const perimetro = perimetroCuadrado(value);
+
   alert(perimetro);
 }
 function calcularAreaCuadrado() {
   const input = document.getElementById("InputCuadrado");
   const value = input.value;
-
   const area = areaCuadrado(value);
+
   alert(area);
 }
 
+/* -------------------------------- TRIANGULO ------------------------------- */
 const input3 = document.getElementById("InputTriangulo3"); //base
-
 function calcularPerimetroTriangulo() {
   const input1 = document.getElementById("InputTriangulo1");
   const input2 = document.getElementById("InputTriangulo2");
@@ -61,28 +54,62 @@ function calcularPerimetroTriangulo() {
   const valueLado3 = parseInt(input3.value);
 
   const perimetro = perimetroTriangulo(valueLado1, valueLado2, valueLado3);
+
   alert(perimetro);
 }
-
 function calcularAreaTriangulo() {
   const inputAltura = document.getElementById("InputTrianguloAltura");
+
   const valueLado3 = parseInt(input3.value);
   const valueAltura = parseInt(inputAltura.value);
 
   const area = areaTriangulo(valueLado3, valueAltura);
+
   alert(area);
 }
 
+/* -------------- calcular la altura de un triángulo isósceles. ------------- */
+function alturaTrianguloIsosceles(
+  trianguloGrandeLadoA,
+  trianguloGrandeLadoB,
+  trianguloGrandeLadoBase
+) {
+  if (trianguloGrandeLadoA != trianguloGrandeLadoB) {
+    console.error("Los lados a y b no son iguales");
+  } else {
+    const trianguloPequenoLadoB = trianguloGrandeLadoBase / 2;
+    const trianguloPequenoLadoBase = trianguloGrandeLadoA;
+
+    const trianguloPequenoLadoBCuadrado =
+      trianguloPequenoLadoB * trianguloPequenoLadoB;
+    const trianguloPequenoLadoBaseCuadrado =
+      trianguloPequenoLadoBase * trianguloPequenoLadoBase;
+
+    const trianguloPequenoLadoA = Math.sqrt(
+      trianguloPequenoLadoBaseCuadrado - trianguloPequenoLadoBCuadrado
+    );
+
+    const trianguloGrandeAltura = trianguloPequenoLadoA;
+    return trianguloGrandeAltura;
+  }
+}
+
+/* -------------------------- teorema de Pitágoras -------------------------- */
+
+/* --------------------------------- CIRCULO -------------------------------- */
 function calcularPerimetroCirculo() {
   const inputRadio = document.getElementById("InputCirculo");
   const valueRadio = inputRadio.value;
 
   const perimetro = perimetroCirculo(valueRadio);
+
   alert(perimetro);
 }
 function calcularAreaCirculo() {
   const inputRadio = document.getElementById("InputCirculo");
   const valueRadio = inputRadio.value;
+
   const area = areaCirculo(valueRadio);
+
   alert(area);
 }

@@ -5,6 +5,12 @@ function calcularPrecioConDescuento(precio, descuento) {
   return precioConDescuento;
 }
 
+function calcularAhorro(precio, descuento) {
+  const porcentajePrecioConDescuento = 100 - descuento;
+  const precioConDescuento = (precio * porcentajePrecioConDescuento) / 100;
+  return precio - precioConDescuento;
+}
+
 function onClickButtonPriceDiscount() {
   const inputPrice = document.getElementById("InputPrice");
   const priceValue = inputPrice.value;
@@ -16,9 +22,14 @@ function onClickButtonPriceDiscount() {
     priceValue,
     discountValue
   );
+  const totalAhorrado = calcularAhorro(priceValue, discountValue);
 
   const resultPrice = document.getElementById("ResultPrice");
-  resultPrice.innerText = "El precio con descuento son $:" + precioConDescuento;
+  resultPrice.innerText =
+    "El precio con descuento son $" +
+    precioConDescuento +
+    ". Estas ahorrando $" +
+    totalAhorrado;
 }
 
 /* ------------------------------ usar cupones ------------------------------ */

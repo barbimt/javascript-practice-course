@@ -4,38 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="discounts.css">
+    <link rel="stylesheet" href="css/discounts.css">
     <title>Percentajes and discounts | Practice course in JS by Platzi</title>
 </head>
 <body>
-    <header>
-        <h1>
+    <header class="bg-gradient-to-r from-purple-200 to-pink-200 shadow-lg h-20 flex justify-center place-items-center">
+        <h1 class="text-center text-4xl font-mono font-bold">
         Descuentos
-    </h1>
-    <p>Este es el segundo taller del Curso Práctico de JavaScript.</p>
+        </h1>
     </header>
-    <section>
-        <h2>Calcula el precio a pagar de tus productos con descuentos</h2>
-        <form>
-            <label for="InputPrice">Escribe el precio de tu producto:</label>
-            <input id="InputPrice" type="number">
 
-            <label for="InputDiscount">Escribe el descuento de tu producto:</label>
-            <input id="InputDiscount" type="number">
+    <div class="flex justify-center min-h-screen bg-gradient-to-r from-purple-200 to-pink-200 space-y-4">
+    <section class=" text-center font-mono rounded-xl w-10/12  border-solid border-purple-900 h-full p-6 bg-white bg-opacity-20">
+        <h2 class="text-2xl text-center">Calcula el precio a pagar con descuento</h2>
+        <form class="flex flex-col items-center">
+            <label class="text-xl pt-5"for="InputPrice">Precio:</label>
+            <input class=" border border-gray-300 p-3 my-2 rounded-md focus:outline-none focus:ring-2 ring-purple-900  w-2/4" id="InputPrice" type="number">
 
-<!-- ------------------------- cupon de descuento -------------------------- -->
-            <label for="InputCoupon">Escribe el cupón de descuento para tu producto:</label>
-            <input id="InputCoupon" type="text" />
-
-            <button type="button" onclick="onClickButtonPriceDiscount()">
+            <label  class="text-xl pt-5"  for="InputDiscount">Descuento:</label>
+            <input  class="border border-gray-300 p-3 my-2 rounded-md focus:outline-none focus:ring-2 ring-purple-900 w-2/4" id="InputDiscount" type="number">
+         <button class="m-10 flex max-w-xs bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-600  hover:to-pink-600 focus:outline-none text-white text-2xl uppercase font-bold shadow-md rounded-lg mx-auto p-5" type="button" onclick="onClickButtonPriceDiscount()">
                 Calcular el precio con descuento 
             </button>
-            <button type="button" onclick="onClickButtonPriceCouponDiscount()">
-                Calcular el precio con cupón 
-            </button>
+           
             <p id="ResultPrice"></p>
-
-
         </form>
     </section>
     
